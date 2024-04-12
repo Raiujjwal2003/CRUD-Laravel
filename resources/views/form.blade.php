@@ -58,7 +58,7 @@
 
                         <div class="form-group">
                             <label for="age">Age:</label>
-                            <input type="number" id="age" name="age" class="form-control"  required>
+                            <input type="number" id="age" name="age" class="form-control" pattern="[0-9]+" required>
                         </div>
 
                         <div class="form-group">
