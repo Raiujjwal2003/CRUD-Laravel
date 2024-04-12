@@ -17,7 +17,7 @@
 </head>
 <body>
 
-<!-- @extends('layout.navbar') -->
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="#">My Form</a>
