@@ -20,4 +20,5 @@ Route::get('/userForm', [UserController::class, 'userForm'])->name('form');
 Route::post('/save', [UserController::class, 'saveFormData'])->name('save');
 Route::get('/edit-user/{id}', [UserController::class, 'edit'])->name('edit-user');  // form 
 Route::post('/update-user/{id}', [UserController::class, 'update'])->name('update-user'); 
-Route::delete('/delete-user/{id}', [UserController::class, 'delete'])->name('delete-user');
+Route::patch('/users/{id}/update-flag', [UserController::class, 'updateFlag'])->name('update-flag');
+

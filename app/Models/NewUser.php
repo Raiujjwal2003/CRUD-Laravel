@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models; // Update the namespace to match Laravel conventions
+namespace App\Models; 
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -11,5 +11,5 @@ class NewUser extends Model
 
     protected $table = 'laravel_crud'; 
 
-    protected $fillable = ['name', 'age', 'branch']; 
+    protected $fillable = ['name', 'age', 'branch','title','isDelete']; 
 }

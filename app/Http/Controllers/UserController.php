@@ -9,9 +9,10 @@ class UserController extends Controller
 {
     public function home(Request $request)
     {
-        $users = NewUser::all();
+        $users = NewUser::where('isDelete', 0)->get();
         return view('home', ['users' => $users]);
     }
+    
 
     public function userForm(Request $request)
     {
@@ -25,12 +26,14 @@ class UserController extends Controller
             'name' => 'required',
             'age' => 'required',
             'branch' => 'required',
+            'title' => 'required',
         ]);
 
         $user = new NewUser();
         $user->name = $validatedData['name'];
         $user->age = $validatedData['age'];
         $user->branch = $validatedData['branch'];
+        $user->title = $validatedData['title'];
         // Save the user
         $user->save();
 
@@ -55,10 +58,20 @@ class UserController extends Controller
 
     public function delete($id)
     {
-        $user = NewUser::findOrFail($id); // Find the user by ID
-        $user->delete(); // Delete the user
+        $user = NewUser::findOrFail($id); 
+        $user->delete(); 
         return redirect()->route('home')->with('success', 'User deleted successfully'); 
     }
+
+    public function updateFlag($id){
+
+    $user = NewUser::find($id);
+
+    $user->update(['isDelete' => 1]);
+
+    return redirect()->route('home')->with('success', 'Delete updated successfully.');
+}
+
 
 }
 
