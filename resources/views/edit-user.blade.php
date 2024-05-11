@@ -51,22 +51,18 @@
                         </div>
                 <div class="mb-3">
                   <label  class="form-label">name</label>
-                  <input name="name" type="text" class="form-control" aria-describedby="Help" value="{{ $user->name}}" pattern="[A-Za-z. ]+" required>
+                  <input name="name" type="text" class="form-control" aria-describedby="Help" value="{{ $user->name}}" pattern="[A-Za-z. ]+" title="Please enter valid name" required>
                   <div  class="form-text">please enter  your name </div>
-                  <div class="invalid-feedback">Please enter a valid name containing only characters and dots.</div>
-
                 </div>
                 <div class="mb-3">
                   <label  class="form-label">age</label>
-                  <input name="age" type="text" class="form-control" aria-describedby="Help"  value="{{ $user->age}}">
+                  <input name="age" type="number" class="form-control" aria-describedby="Help"  value="{{ $user->age}}" pattern="[0-9]+" required>
                   <div  class="form-text">please enter  your age </div>
                 </div>
                 <div class="mb-3">
                   <label  class="form-label">branch</label>
-                  <input name="branch" type="text" class="form-control" aria-describedby="Help" value="{{ $user->branch}}" pattern="[a-zA-Z\s]+" required>
+                  <input name="branch" type="text" class="form-control" aria-describedby="Help" value="{{ $user->branch}}" pattern="[a-zA-Z\s]+" title="Please enter a valid Branch" required>
                   <div  class="form-text">please enter  your branch </div>
-                  <div class="invalid-feedback">Please enter only letters and spaces.</div>
-
                 </div>
  
   <button type="submit" class="btn btn-primary aline-center">Save</button>

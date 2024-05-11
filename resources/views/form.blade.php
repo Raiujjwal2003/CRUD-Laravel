@@ -42,32 +42,27 @@
                     <form action="{{ route('save') }}" method="post">
                         @csrf <!-- CSRF token field -->
 
-                         <div class="form-group">
+                        <div class="form-group">
                             <label for="title">Title:</label>
                             <select id="title" name="title" class="form-control">
+                                <option value="">Select</option> <!-- Add an empty option as default -->
                                 <option value="Mr">Mr</option>
                                 <option value="Mrs">Mrs</option>
                             </select>
                         </div>
-
                         <div class="form-group">
                             <label for="name">Name:</label>
-                            <input type="text" id="name" name="name" class="form-control" pattern="[A-Za-z. ]+" required>
-                            <div class="invalid-feedback">Please enter a valid name containing only characters and dots.</div>
-                          </div>
-
+                            <input type="text" id="name" name="name" class="form-control" pattern="[A-Za-z. ]+" title="Please enter a valid name." required>
+                        </div>
                         <div class="form-group">
                             <label for="age">Age:</label>
-                            <input type="number" id="age" name="age" class="form-control" pattern="[0-9]+" required>
+                            <input type="number" id="age" name="age" class="form-control" min="0" required>
                         </div>
 
                         <div class="form-group">
                             <label for="branch">Branch:</label>
                             <input type="text" id="branch" name="branch" class="form-control" pattern="[a-zA-Z\s]+" title="Please enter only letters and spaces" required>
-                            <div class="invalid-feedback">Please enter only letters and spaces.</div>
                         </div>
-
-
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </div>
